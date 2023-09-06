@@ -1,6 +1,6 @@
 # Impacket - Collection of Python classes for working with network protocols.
 #
-# Copyright (C) 2022 Fortra. All rights reserved.
+# Copyright (C) 2023 Fortra. All rights reserved.
 #
 # This software is provided under a slightly modified version
 # of the Apache Software License. See the accompanying LICENSE file
@@ -590,7 +590,7 @@ class MSSQL:
     def socketRecv(self, packetSize):
         data = self.socket.recv(packetSize)
         if self.tlsSocket is not None:
-            dd = ''
+            dd = b''
             self.tlsSocket.bio_write(data)
             while True:
                 try:
